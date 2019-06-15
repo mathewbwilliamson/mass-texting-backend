@@ -1,7 +1,7 @@
 {
-  "name": "thinkful-backend-template",
+  "name": "mass-texting-backend",
   "version": "1.0.0",
-  "description": "Template for an Express backend",
+  "description": "Mass Texting Backend",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -12,7 +12,7 @@
     "heroku": "node index.js",
     "travis": "npm run mocha"
   },
-  "author": "Joe Turner <jturner@thinkful.com>",
+  "author": "Matt Williamson",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",

@@ -1,3 +1,9 @@
+# TODO List
+- Get the texting routes working
+- Don't need a database, but maybe we do because of putting and keeping phone numbers in it
+- We need login
+
+
 # Thinkful Backend Template
 
 A template for developing and deploying Node.js apps.
