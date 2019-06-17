@@ -1,7 +1,9 @@
 'use strict';
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI, { useCreateIndex: true, useNewUrlParser: true });
+const config = require('../config')
+
+mongoose.connect(config.DATABASE_URL, { useNewUrlParser: true });
 mongoose.Promise = global.Promise;
 
 module.exports = {

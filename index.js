@@ -7,9 +7,8 @@ const morgan = require('morgan');
 const bodyParser = require('body-parser')
 
 const { PORT, CLIENT_ORIGIN } = require('./config');
-// const { dbConnect } = require('./db-mongoose');
-const jwt = require('_helpers/jwt');
-const errorHandler = require('_helpers/error-handler');
+const jwt = require('./_helpers/jwt');
+const errorHandler = require('./_helpers/error-handler');
 
 const sendATextRouter = require('./sms/sendSms')
 
@@ -28,6 +27,7 @@ app.use(
 
 // api routes
 app.use('/users', require('./users/users.controller'));
+app.use('/sendsms', sendATextRouter)
 
 
 // TODO: This probably won't be needed, but is there a way to forward an incoming message to the user? That would cost money though. How about putting them
@@ -49,7 +49,6 @@ app.post('/sms', (req, res, next) => {
   res.end(twiml.toString());
 });
 
-app.use('/sendsms', sendATextRouter)
 
 
 app.use(

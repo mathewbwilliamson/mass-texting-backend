@@ -1,7 +1,7 @@
-const config = require('config.json');
+const config = require('../config');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const db = require('_helpers/db');
+const db = require('../_helpers/db-mongoose');
 const User = db.User;
 
 module.exports = {
@@ -17,7 +17,7 @@ async function authenticate({ username, password }) {
     const user = await User.findOne({ username });
     if (user && bcrypt.compareSync(password, user.hash)) {
         const { hash, ...userWithoutHash } = user.toObject();
-        const token = jwt.sign({ sub: user.id }, config.secret);
+        const token = jwt.sign({ sub: user.id }, config.APP_SECRET);
         return {
             ...userWithoutHash,
             token
@@ -34,6 +34,8 @@ async function getById(id) {
 }
 
 async function create(userParam) {
+    console.log('[matt] function create', )
+    
     // validate
     if (await User.findOne({ username: userParam.username })) {
         throw 'Username "' + userParam.username + '" is already taken';
