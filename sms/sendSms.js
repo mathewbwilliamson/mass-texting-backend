@@ -2,8 +2,6 @@ const phone  = require('phone')
 const express = require('express')
 const router = express.Router()
 
-// [matt] below will not work because server isn't running for this file ???
-// [matt] Once this is in the project on the server, we can use .env ????
 const accountSid = process.env.TWILIO_ACCOUNT_SID
 const authToken = process.env.TWILIO_AUTH_TOKEN
 

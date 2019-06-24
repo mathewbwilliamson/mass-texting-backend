@@ -26,7 +26,9 @@ app.use(
 );
 
 // api routes
-app.use('/users', require('./users/users.controller'));
+app.use('/users', cors({
+  origin: CLIENT_ORIGIN
+}), require('./users/users.controller'));
 app.use('/sendsms', sendATextRouter)
 
 

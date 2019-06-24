@@ -1,13 +1,14 @@
 # TODO List
 - DONE Get the texting routes working
 - Don't need a database, but maybe we do because of putting and keeping phone numbers in it
-- We need login
+- DONE We need login
 - To send texts, just npm start, then postman to localhost:4444/sendSms
 {
 	"message":"this is a third test",
 	"toPhoneNumber": "19415876572",
 	"fromPhoneNumber": "19415876572"
 }
+- Create a response text. If they text back to the message, it tells them to text Autumn directly then forwards text to Autumn in some way (eventually the user)
 
 
 # Thinkful Backend Template
