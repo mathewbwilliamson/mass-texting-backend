@@ -14,6 +14,12 @@ const sendATextRouter = require('./sms/sendSms')
 
 const app = express();
 
+app.use(
+  cors({
+    origin: CLIENT_ORIGIN
+  })
+)
+
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
@@ -53,11 +59,6 @@ app.post('/sms', (req, res, next) => {
 
 
 
-app.use(
-  cors({
-    origin: CLIENT_ORIGIN
-  })
-);
 
 // global error handler
 app.use(errorHandler);
