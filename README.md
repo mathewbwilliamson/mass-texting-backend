@@ -10,6 +10,9 @@
 }
 - Create a response text. If they text back to the message, it tells them to text Autumn directly then forwards text to Autumn in some way (eventually the user)
 
+NOTES: 
+- To configure local response ability server: ngrok http 4444 then copy the url into the Twilio console for messaging.
+
 
 # Thinkful Backend Template
 

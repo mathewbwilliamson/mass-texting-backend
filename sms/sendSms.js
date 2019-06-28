@@ -4,6 +4,8 @@ const router = express.Router()
 
 const accountSid = process.env.TWILIO_ACCOUNT_SID
 const authToken = process.env.TWILIO_AUTH_TOKEN
+console.log('[matt] accountSid', accountSid)
+
 
 const client = require('twilio')(accountSid, authToken);
 
@@ -12,7 +14,7 @@ router.post('/', (req, res, next) => {
     
     // Remember that we can't send a message to a phone number that is not verified when on a trial account
     const { message, toPhoneNumbers = ['+19415876572'], fromPhoneNumber = process.env.OUR_PHONE_NUMBER } = req.body
-
+    
     const cleanedFromPhoneNumber = phone(fromPhoneNumber, 'USA')
     
     toPhoneNumbers.forEach(toPhoneNumber => {
