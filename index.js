@@ -36,8 +36,7 @@ app.post('/sms', (req, res) => {
   const twiml = new MessagingResponse();
   console.log('[matt] req.body', req.body)
 
-  twiml.message('Please respond directly to Autumn if you have questions or concerns. This is an automated message.')
-  twiml.to('+19415876572')
+  twiml.message({to: '+19415876572'}, 'Please respond directly to Autumn if you have questions or concerns. This is an automated message.')
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
