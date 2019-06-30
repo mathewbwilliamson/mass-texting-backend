@@ -33,12 +33,13 @@ app.use(
 app.post('/sms', (req, res) => {
   // [matt]: https://www.twilio.com/docs/sms/tutorials/how-to-receive-and-reply-node-js
   // When a message comes in to the server, this Messaging Response sends this message in return
-  // const reply = new MessagingResponse();
-  // reply.message('Please respond directly to Autumn if you have questions or concerns. This is an automated message.')
+  const reply = new MessagingResponse();
+  reply.message('Please respond directly to Autumn if you have questions or concerns. This is an automated message.')
   // console.log('[matt] req', req)
   
-  const forwardToJulieAndAutumn = new MessagingResponse()
-  forwardToJulieAndAutumn.message({to: '+19415445293'}, `Msg from ????: ${res.body}`)
+  // [matt]: TODO Get this to work!!
+  // const forwardToJulieAndAutumn = new MessagingResponse()
+  // forwardToJulieAndAutumn.message({to: '+19415445293'}, `Msg from ????: ${res.body}`)
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(reply.toString());
