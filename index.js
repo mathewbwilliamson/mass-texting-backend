@@ -41,7 +41,7 @@ app.post('/sms', (req, res) => {
   forwardToJulieAndAutumn.message({to: '+19415876572'}, `Msg from ????: ${res.body}`)
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
-  res.end(twiml.toString());
+  res.end(reply.toString());
 });
 
 app.use(jwt())
