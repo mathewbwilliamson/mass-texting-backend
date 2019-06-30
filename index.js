@@ -38,7 +38,7 @@ app.post('/sms', (req, res) => {
   console.log('[matt] req', req)
   
   const forwardToJulieAndAutumn = new MessagingResponse()
-  forwardToJulieAndAutumn.message({to: '+19415876572'}, `Msg from ????: ${res.body}`)
+  forwardToJulieAndAutumn.message({to: '+19415445293'}, `Msg from ????: ${res.body}`)
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(reply.toString());
