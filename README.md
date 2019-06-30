@@ -12,6 +12,7 @@
 
 NOTES: 
 - To configure local response ability server: ngrok http 4444 then copy the url into the Twilio console for messaging.
+- Heroku account is via matt@mathnasiumofnewtampa.com and so is Twilio account
 
 
 # Thinkful Backend Template

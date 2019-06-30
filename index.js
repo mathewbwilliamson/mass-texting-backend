@@ -31,18 +31,13 @@ app.use(
   })
 );
 app.post('/sms', (req, res) => {
-  console.log('[matt] IN HEREEEEEEEEEEEEEE', )
-  
   // [matt]: https://www.twilio.com/docs/sms/tutorials/how-to-receive-and-reply-node-js
   // When a message comes in to the server, this Messaging Response sends this message in return
   const twiml = new MessagingResponse();
   console.log('[matt] req.body', req.body)
 
-  if (req.body.Body.toLowerCase() === 'moo') {
-    twiml.message('This is an automated message MOO')
-  } else {
-    twiml.message('Please respond directly to Autumn if you have questions or concerns. This is an automated message.');
-  }
+  twiml.message('Please respond directly to Autumn if you have questions or concerns. This is an automated message.')
+  twiml.to('+19415876572')
 
   res.writeHead(200, {'Content-Type': 'text/xml'});
   res.end(twiml.toString());
