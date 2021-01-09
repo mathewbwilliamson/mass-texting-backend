@@ -20,6 +20,7 @@ function authenticate(req, res, next) {
 }
 
 function register(req, res, next) {
+    console.log('\x1b[42m%s \x1b[0m', '[matt] req.body', req.body);
     userService.create(req.body)
         .then(() => res.json({}))
         .catch(err => next(err));

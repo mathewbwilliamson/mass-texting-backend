@@ -34,20 +34,25 @@ async function getById(id) {
 }
 
 async function create(userParam) {
+    // userParam: username: string; password: string; lastName: string; firstName: string;
     console.log('[matt] function create', )
+    console.log('\x1b[41m%s \x1b[0m', '[matt] create', userParam);
     
     // validate
     if (await User.findOne({ username: userParam.username })) {
         throw 'Username "' + userParam.username + '" is already taken';
     }
 
+    console.log('\x1b[41m%s \x1b[0m', '[matt] before');
     const user = new User(userParam);
+    console.log('\x1b[41m%s \x1b[0m', '[matt] user', user);
 
     // hash password
     if (userParam.password) {
         user.hash = bcrypt.hashSync(userParam.password, 10);
     }
 
+    console.log('\x1b[41m%s \x1b[0m', '[matt] before save');
     // save user
     await user.save();
 }

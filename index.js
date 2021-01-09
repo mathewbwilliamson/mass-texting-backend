@@ -23,7 +23,6 @@ app.use(
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
-console.log('[matt] test ' )
 
 app.use(
   morgan(process.env.NODE_ENV === 'production' ? 'common' : 'dev', {

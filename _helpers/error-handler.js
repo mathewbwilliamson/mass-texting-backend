@@ -1,8 +1,8 @@
 module.exports = errorHandler;
 
 function errorHandler(err, req, res, next) {
-    console.log('[matt] ERROR req', req.body)
-    console.log('[matt] err', err)
+    console.log('\x1b[41m%s \x1b[0m', '[matt] ERROR request', req.body);
+    console.log('\x1b[41m%s \x1b[0m', '[matt] ERROR', err);
     
     
     if (typeof (err) === 'string') {
